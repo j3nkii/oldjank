@@ -20,7 +20,6 @@ body{
     display: flex;
     flex-direction: row;
     background-color: rgba(255, 255, 255, 0.685);
-
 }
 #left{
     width: 40%;
@@ -34,11 +33,19 @@ body{
 }
 
 /* BY ID *********************/
+#nameTitle, 
+#nameTitle h1{
+    text-align: right;
+    margin-bottom: 3px;
+}
+#profilePicContainer {
+    border: 2px solid #232323; }
 #profilePic {
     height: auto;
-    width: 100%;
-    border: 1px solid black;
+    max-width: 100%;
+    display: block; /* removes odd whitespace beneath photo */
 }
+
 #logo {
     height: auto;
     width: 15%; }
@@ -71,7 +78,9 @@ body{
     color: white; 
     padding: 2px;
 }
-
+.skillsList{
+    text-align: center;
+}
 .secondaryContainer{
     margin-top: 1rem;
     margin-bottom: 1rem;
