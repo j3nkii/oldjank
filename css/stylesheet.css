@@ -1,0 +1,103 @@
+/* By element+containers ***************/
+body{
+    background-color: #fbd3da;
+    background-image: url('../assets/fallingblossoms.gif');
+}
+header {
+    font-family: 'Courier New', monospace;
+    background-color: #232323;
+}
+#mainContainer{
+    width: 820px;
+    max-width: 100%;
+    margin: auto;
+}
+.content {
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(255, 255, 255, 0.685);
+
+}
+#left{
+    width: 40%;
+    flex-direction: row;
+    padding: 1.5rem;
+}
+#right{
+    width: 60%;
+    padding: 1.5rem;
+    flex-direction: row;
+}
+
+/* BY ID *********************/
+#profilePic {
+    height: auto;
+    width: 100%;
+}
+#logo {
+    height: auto;
+    width: 15%; }
+#contactInfo p{
+    margin: 2px;
+    padding: 2px;
+}
+#linkedinLogo,
+#GmailLogo,
+#githubLogo{
+    height: 2rem;
+    padding: .4rem .6rem .4rem .6rem;
+}
+
+
+
+/* BY CLASS ******************/
+
+.primaryContainer{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 2px solid #60a5fa; }
+.primaryHeader h2{
+    font-weight: bold;
+    margin: 0;
+    background: #60a5fa;
+    color: white; 
+    padding: 2px;
+}
+
+.secondaryContainer{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 3px solid #f9c56c; }
+.secondaryHeader h2{
+    font-weight: 600;
+    color: #ed0707;
+    background: #f9c56c;
+    padding: 2px;
+    padding-left: 5px;}
+.secondaryBody p{
+    margin: 4px;
+    padding: 4px; 
+}
+
+/* background-color: #1c4ed8  good MS blue*/
+.header {
+    background-color: #232323;
+    color: white;
+    display: flex;
+    /* padding-left: 4rem;
+    padding-right: 1rem; 
+    padding-bottom: 2.5rem; 
+    padding-top: 1.5rem;  */
+}
+.nav {
+    background-color: lightblue;
+}
+.footer {
+    text-align: center;
+    background-color: grey;
+}
+
+.contactLinks{
+    display: flex;
+    align-items: center;
+}
