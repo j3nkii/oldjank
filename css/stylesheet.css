@@ -1,3 +1,9 @@
+/* Colors
+#d67d7d -- Dark Reddish
+ */
+
+
+
 /* By element+containers ***************/
 body{
     background-color: #fbd3da;
@@ -11,6 +17,7 @@ header {
     width: 820px;
     max-width: 100%;
     margin: auto;
+    border: 4px solid #232323;
 }
 .content {
     display: flex;
@@ -33,6 +40,7 @@ header {
 #profilePic {
     height: auto;
     width: 100%;
+    border: 1px solid black;
 }
 #logo {
     height: auto;
@@ -67,11 +75,11 @@ header {
 .secondaryContainer{
     margin-top: 1rem;
     margin-bottom: 1rem;
-    border: 3px solid #f9c56c; }
+    border: 3px solid #d67d7d; }
 .secondaryHeader h2{
     font-weight: 600;
-    color: #ed0707;
-    background: #f9c56c;
+    color: rgb(255, 255, 255);
+    background: #d67d7d;
     padding: 2px;
     padding-left: 5px;}
 .secondaryBody p{
@@ -84,6 +92,7 @@ header {
     background-color: #232323;
     color: white;
     display: flex;
+    align-items: center;
     /* padding-left: 4rem;
     padding-right: 1rem; 
     padding-bottom: 2.5rem; 
@@ -93,8 +102,13 @@ header {
     background-color: lightblue;
 }
 .footer {
-    text-align: center;
-    background-color: grey;
+    color: white;
+    background-color: #232323;
+    margin: 0;
+    text-align: center; }
+.footer p {
+    margin: 0;
+    padding: 4px;
 }
 
 .contactLinks{
