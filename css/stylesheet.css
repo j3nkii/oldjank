@@ -1,5 +1,6 @@
 /* Colors
 #d67d7d -- Dark Reddish
+#232323 -- Space Black
  */
 
 
@@ -8,11 +9,6 @@
 body{
     background-color: #fbd3da;
     background-image: url('../assets/fallingblossoms.gif');
-}
-header {
-    font-family: 'Courier New', monospace;
-    background-image: url('../assets/planetDonutBack.png');
-    /* background-color: #232323; */
 }
 #mainContainer{
     width: 820px;
@@ -56,7 +52,10 @@ header {
     height: 2rem;
     padding: .4rem .6rem .4rem .6rem;
 }
-
+#testo{
+    background-image: url('../assets/planetDonutBack.png');
+    background-size: contain;
+}
 
 
 /* BY CLASS ******************/
@@ -83,19 +82,24 @@ header {
     background: #d67d7d;
     padding: 2px;
     padding-left: 5px;}
-.secondaryBody p{
+.secondaryBody p,
+.secondaryBody h3{
     margin: 4px;
-    padding: 4px; 
+    padding: 4px; }
+.secondaryBody h3,
+.secondaryBody a{
+    font-weight: bold;
+    color: #232323;
 }
 
+
 /* background-color: #1c4ed8  good MS blue*/
-.header {
-    background-image: url('../assets/planetDonutBack.png');
-    background-repeat: repeat-x;
-    /* background-color: #232323; */
+#headerContainer {
+    font-family: 'Courier New', monospace;
     color: white;
     display: flex;
     align-items: center;
+    /* background-color: #232323; */
     /* padding-left: 4rem;
     padding-right: 1rem; 
     padding-bottom: 2.5rem; 
