@@ -11,7 +11,8 @@ body{
 }
 header {
     font-family: 'Courier New', monospace;
-    background-color: #232323;
+    background-image: url('../assets/planetDonutBack.png');
+    /* background-color: #232323; */
 }
 #mainContainer{
     width: 820px;
@@ -89,7 +90,9 @@ header {
 
 /* background-color: #1c4ed8  good MS blue*/
 .header {
-    background-color: #232323;
+    background-image: url('../assets/planetDonutBack.png');
+    background-repeat: repeat-x;
+    /* background-color: #232323; */
     color: white;
     display: flex;
     align-items: center;
