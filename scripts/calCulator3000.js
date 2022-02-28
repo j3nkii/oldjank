@@ -16,7 +16,8 @@ function equates(str){
     if(!reggieVal.test(str) && !/\d.*/.test(str)){
         return "try again"
     }
-    let arr = str.replace(/([*|\/|-|+])/gm, ' $1 ').split(' ');
+    let arr = str.replace(/([*|\/|\-|+])/gm, ' $1 ').split(' ');
+    console.log(arr);
     for(let i in arr){
         
         if(arr[i] === '/' || arr[i] === '*'){
