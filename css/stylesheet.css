@@ -94,6 +94,8 @@ body{
     background: #d67d7d;
     padding: 2px;
     padding-left: 5px;}
+.secondaryBody input,
+.secondaryBody button,
 .secondaryBody p,
 .secondaryBody h3{
     margin: 4px;
