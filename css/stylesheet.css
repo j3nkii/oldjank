@@ -16,6 +16,9 @@ body{
     margin: auto;
     border: 4px solid #232323;
 }
+@media (min-width: 550px) {
+    .content { flex-direction: column; }
+}
 .content {
     display: flex;
     flex-direction: row;
@@ -78,7 +81,7 @@ body{
     color: white; 
     padding: 2px;
 }
-.skillsList{
+#skillsContainer{
     text-align: center;
 }
 .secondaryContainer{
