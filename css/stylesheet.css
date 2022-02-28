@@ -36,6 +36,20 @@ body{
 }
 
 /* BY ID *********************/
+#cipher{
+    display: flex; }
+#cipher button,
+#cipher input{
+    width: 30%
+}
+
+#calcForm{
+    display: flex; 
+justify-content: space-around;}
+#calcForm button,
+#calcForm input{
+    width: 40%
+}
 #nameTitle, 
 #nameTitle h1{
     text-align: right;
@@ -87,13 +101,15 @@ body{
 .secondaryContainer{
     margin-top: 1rem;
     margin-bottom: 1rem;
-    border: 3px solid #d67d7d; }
+    border: 3px solid #f48d8d; }
 .secondaryHeader h2{
     font-weight: 600;
     color: rgb(255, 255, 255);
-    background: #d67d7d;
+    background: #f48d8d;
     padding: 2px;
     padding-left: 5px;}
+.secondaryBody input,
+.secondaryBody button,
 .secondaryBody p,
 .secondaryBody h3{
     margin: 4px;
