@@ -2,7 +2,6 @@
 
 $(ready)
 function ready(){
-    console.log('jqGo');
     $(document).on('submit' ,'#calcForm', calculator);
 }
 
