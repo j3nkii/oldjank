@@ -12,12 +12,13 @@ function calculator(event){
 }
 
 function equates(str){
+    if(!isNaN(Number(str))) return str
     let reggieVal = /^(?:-?\d*\.?\d+ ?[\+\-\*\/] ?){1,}-?\d*\.?\d+$/gm //validating equation
     if(!reggieVal.test(str) && !/\d.*/.test(str)){
         return "try again"
     }
     let arr = str.replace(/([*|\/|\-|+])/gm, ' $1 ').split(' ');
-    console.log(arr);
+    //console.log(arr.length);
     for(let i in arr){
         
         if(arr[i] === '/' || arr[i] === '*'){
@@ -41,5 +42,4 @@ function equates(str){
             }
         }
     }
-    return arr.join('')
 }
