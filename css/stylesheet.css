@@ -16,9 +16,9 @@ body{
     margin: auto;
     border: 4px solid #232323;
 }
-@media (min-width: 550px) {
+/* @media (min-width: 550px) {
     .content { flex-direction: column; }
-}
+} */
 .content {
     display: flex;
     flex-direction: row;
@@ -41,6 +41,10 @@ body{
 #cipher button,
 #cipher input{
     width: 30%
+}
+#spaceHey{
+    color: white;
+    text-decoration: underline;
 }
 
 #calcForm{
@@ -114,11 +118,32 @@ justify-content: space-around;}
 .secondaryBody h3{
     margin: 4px;
     padding: 4px; }
-.secondaryBody h3,
-.secondaryBody a{
+.secondaryBody h3{
     font-weight: bold;
-    color: #232323;
+    color: #232323; }
+.projectContainer p{
+    text-align: justify;
 }
+.projectContainer .projectLink{
+    text-align: right;
+}
+.projectLink, 
+.projectLink a{
+    color: #4a97f5;
+    text-align: right;
+    text-decoration: underline;
+}
+.projectSeparator{
+    width: 90%;
+    height: 3px;
+    background: #f48d8d;
+    margin: 10px auto 10px auto
+}
+/* .projectContainer{
+    margin-top: 30px; }
+.projectContainer:first-of-type{
+    margin-top: inherit
+} */
 
 
 /* background-color: #1c4ed8  good MS blue*/
