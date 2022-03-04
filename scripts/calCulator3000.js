@@ -1,5 +1,3 @@
-//will not handle equations with spaces right now
-
 $(ready)
 function ready(){
     $(document).on('submit' ,'#calcForm', calculator);
@@ -8,26 +6,29 @@ function ready(){
 function calculator(event){
     event.preventDefault();
     let equation = $('#calcInput').val();
-    $('#calcInput').val(equates(equation))
+    let parsedEquation = unString(equation)
+
+    $('#calcInput').val(equates(parsedEquation))
 }
 
-function equates(str){
-    if(!isNaN(Number(str))) return str
-    let reggieVal = /^(?:-?\d*\.?\d+ ?[\+\-\*\/] ?){1,}-?\d*\.?\d+$/gm //validating equation
-    if(!reggieVal.test(str) && !/\d.*/.test(str)){
-        return "try again"
-    }
-    let arr = str.replace(/([*|\/|\-|+])/gm, ' $1 ').split(' ');
-    //console.log(arr.length);
+
+
+function equates(arr){
+    // if(!isNaN(Number(str))) return str
+    // let reggieVal = /^(?:-?\d*\.?\d+ ?[\+\-\*\/] ?){1,}-?\d*\.?\d+$/gm //validating equation
+    // if(!reggieVal.test(str) && !/\d.*/.test(str)){
+    //     return "try again"
+    // }
+    // let arr = str.replace(/([*|\/|\-|+])/gm, ' $1 ').split(' ');
+    
     for(let i in arr){
-        
         if(arr[i] === '/' || arr[i] === '*'){
             if(arr[i] === '*'){
                 arr.splice(i - 1, 3, arr[i - 1] * arr[Number(i) + 1])
-                return equates(arr.join(''))
+                return equates(arr)
             } else if(arr[i] === '/'){
                 arr.splice(i - 1, 3, arr[i - 1] / arr[Number(i) + 1])
-                return equates(arr.join(''))
+                return equates(arr)
             } 
         }
     }
@@ -35,11 +36,38 @@ function equates(str){
         if(arr[i] === '+' || arr[i] === '-'){
             if(arr[i] === '+'){
                 arr.splice(i - 1, 3, Number(arr[i - 1]) + Number(arr[Number(i) + 1]))
-                return equates(arr.join(''))
+                return equates(arr)
             } else {
                 arr.splice(i - 1, 3, arr[i - 1] - arr[Number(i) + 1])
-                return equates(arr.join(''))
+                return equates(arr)
             }
         }
     }
+    return arr
+}
+
+
+
+//used to parse string into usable equation
+function unString(str){
+    let arr = [];
+    console.log('butt')
+    while(str.length > 0){
+        //group operator ahead of Negnum along with Negnum
+        if(/^([\(\)\^+\-\*\/])(\-\d*.?\d+)/.test(str)){
+            console.log('minus negative')
+            arr.push(str.replace(/^([\(\)\^+\-\*\/])(\-\d*.?\d+)/, '$1'), Number(str.replace(/^([\(\)\^+\-\*\/])(\-\d*.?\d+)/, '$2')));
+            str = str.replace(/^[\(\)\^+\-\*\/]\-\d*.?\d+(.*)/, '$1');
+        }else if(/^([\(\)\^+\-\*\/])/.test(str)){
+            //console.log('operator')
+            arr.push(str.replace(/^([\(\)\^+\-\*\/]).*/, '$1'));
+            str = str.replace(/^[\(\)\^+\-\*\/](.*)/, '$1');
+        }else if(/^(-?\d*\.?\d+)/.test(str)){
+            //console.log('digit')
+            arr.push(Number(str.replace(/^(-?\d*\.?\d+).*/, '$1')));
+            str = str.replace(/^-?\d*\.?\d+(.*)/, '$1');
+            //str = str.slice(arr[0, arr.length - 1]);
+        } 
+    }
+    return arr;
 }

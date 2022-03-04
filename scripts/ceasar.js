@@ -1,6 +1,5 @@
-// const butt = $('#ceasarMessage').text()
 let ceasarText;
-$(ready)
+$(ready);
 function ready(){
     $(document).on('click' ,'#ceasarCipher', rot);
     $(document).on('click' ,'#ceasarReset', reset);
@@ -8,18 +7,16 @@ function ready(){
 }
 function reset(event){
     event.preventDefault();
-    $('#ceasarMessage').text(ceasarText)
+    $('#ceasarMessage').text(ceasarText);
 }
 
 function rot(event, message = $('#ceasarMessage').text(), number = $(ceasarInput).val()) {
     event.preventDefault();
-    console.log($(this));
     let coded = [];
     let converted = '';
-    console.log(message);
     number %= 26;
     if(number < 0){
-        number = 26 - Math.abs(number)
+        number = 26 - Math.abs(number);
     } 
     for(let index in message) {
         coded.push(message.charCodeAt(index));
@@ -27,10 +24,10 @@ function rot(event, message = $('#ceasarMessage').text(), number = $(ceasarInput
         if(ascii < 65 || (ascii > 90 && ascii < 97) || ascii > 122){
             converted+= String.fromCharCode(ascii);
         }else if(ascii >= 65 && ascii <= 90){
-        ascii+=parseInt(number);
-        converted += ascii >= 65 && ascii <= 90
-            ? String.fromCharCode(ascii)
-            : String.fromCharCode(ascii - 26) 
+            ascii+=parseInt(number);
+            converted += ascii >= 65 && ascii <= 90
+                ? String.fromCharCode(ascii)
+                : String.fromCharCode(ascii - 26) 
         } else if(ascii >= 97 && ascii <= 122){
             ascii+=parseInt(number);
             converted += ascii >= 97 && ascii <= 122 
@@ -38,5 +35,5 @@ function rot(event, message = $('#ceasarMessage').text(), number = $(ceasarInput
                 : String.fromCharCode(ascii - 26) 
         }
     }
-    $('#ceasarMessage').text(converted)
+    $('#ceasarMessage').text(converted);
 }
